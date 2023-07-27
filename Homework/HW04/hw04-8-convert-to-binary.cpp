@@ -15,10 +15,11 @@
 */
 #include <cstdio>
 int main() {
-    int decimalNum, binaryNum = 0, base = 1;
-    printf("User input :\n");
+    int decimalNum;
+    printf("User input:\n");
     scanf("%d", &decimalNum);
 
+    int binaryNum = 0, base = 1;
     while (decimalNum > 0) {
         binaryNum += (decimalNum % 2) * base;
         decimalNum /= 2;
