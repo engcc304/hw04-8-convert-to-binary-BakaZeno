@@ -25,7 +25,7 @@ int main() {
         base *= 10;
     }
 
-    printf("Output: \n%05d", binaryNum);
+    printf("Output:\n%d\n", binaryNum);
 
     return 0;
 }
