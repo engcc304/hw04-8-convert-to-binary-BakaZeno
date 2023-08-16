@@ -13,20 +13,29 @@
     Output:
         11001
 */
-#include <cstdio>
-int main() {
-    int decimalNum;
-    printf("User input:\n");
-    scanf("%d", &decimalNum);
+#include <iostream>
+#include <string>
+#include <map>
 
-    int binaryNum = 0, base = 1;
-    while (decimalNum > 0) {
-        binaryNum += (decimalNum % 2) * base;
-        decimalNum /= 2;
-        base *= 10;
+int main() {
+    std::map<char, std::string> hexToBinary = {
+        {'0', "0000"}, {'1', "0001"}, {'2', "0010"}, {'3', "0011"},
+        {'4', "0100"}, {'5', "0101"}, {'6', "0110"}, {'7', "0111"},
+        {'8', "1000"}, {'9', "1001"}, {'A', "1010"}, {'B', "1011"},
+        {'C', "1100"}, {'D', "1101"}, {'E', "1110"}, {'F', "1111"}
+    };
+
+    std::string hexInput;
+    std::string binaryOutput = "";
+
+    std::cout << "Enter a hexadecimal number: ";
+    std::cin >> hexInput;
+
+    for (char c : hexInput) {
+        binaryOutput += hexToBinary[c];
     }
 
-    printf("Output:\n%d\n", binaryNum);
+    std::cout << "Binary representation: " << binaryOutput << std::endl;
 
     return 0;
 }
